@@ -1,0 +1,35 @@
+
+import java.net.*;
+
+public class SpamCheck {
+    public static final String BlackHole = "spamhaus.org/sbl";
+
+    public static void main(String[] args) {
+        String[] spamList = { "207.34.56.23", "125.12.32.4", "130.130.130.130" };
+        for (String spam : spamList) {
+            if (isSpam(spam)) {
+                System.out.println("Spam found" + spam);
+
+            } else {
+                System.out.println("Spam not found" + spam);
+            }
+        }
+    }
+
+    public static boolean isSpam(String url) {
+        try {
+            InetAddress add = InetAddress.getByName(url);
+            byte[] ip = add.getAddress();
+            String query = BlackHole;
+            for (byte octet : ip) {
+                int unsignedByte = octet < 0 ? octet + 256 : octet;
+                query = unsignedByte + "." + query;
+            }
+            InetAddress.getByName(query);
+            return true;
+        } catch (UnknownHostException e) {
+            return false;
+        }
+    }
+
+}
