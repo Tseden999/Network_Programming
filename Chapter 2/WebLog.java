@@ -1,7 +1,6 @@
 
 import java.net.*;
 import java.io.*;
-import java.io.BufferReader;
 
 public class WebLog {
     public static void main(String[] args) {

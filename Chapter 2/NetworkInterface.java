@@ -1,14 +1,8 @@
 
-//Java program to illustrate various
-//networkInterface class methods.
 import java.net.*;
-import java.net.InterfaceAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.ArrayList.*;
 import java.util.Collections;
-import java.util.Enumeration;
 
 public class NetworkInterface {
     public static void main(String[] args) throws SocketException,
