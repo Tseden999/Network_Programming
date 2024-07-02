@@ -3,6 +3,7 @@ import java.net.*;
 import java.util.ArrayList;
 import java.util.ArrayList.*;
 import java.util.Collections;
+import java.util.Enumeration;
 
 public class NetworkInterface {
     public static void main(String[] args) throws SocketException,
@@ -96,5 +97,40 @@ public class NetworkInterface {
 
         // hashCode() method
         System.out.println("Hashcode : " + nif.hashCode());
+    }
+
+    public String getDisplayName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDisplayName'");
+    }
+
+    public String getName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getName'");
+    }
+
+    public String isUp() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isUp'");
+    }
+
+    public String isVirtual() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isVirtual'");
+    }
+
+    public String getMTU() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMTU'");
+    }
+
+    public String isLoopback() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isLoopback'");
+    }
+
+    public static Enumeration getNetworkInterface() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNetworkInterface'");
     }
 }

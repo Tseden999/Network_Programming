@@ -22,39 +22,14 @@ public class IPAddressCharacteristics {
             } else if (address instanceof java.net.Inet6Address) {
                 System.out.println("This is an IPv6 address.");
             }
-
-            if (address.isLoopbackAddress()) {
-                System.out.println("This is a loopback address.");
-            } else {
-                System.out.println("This is not a loopback address.");
-            }
-
-            if (address.isMulticastAddress()) {
-                System.out.println("This is a multicast address.");
-            } else {
-                System.out.println("This is not a multicast address.");
-            }
-
-            if (address.isAnyLocalAddress()) {
-                System.out.println("This is a wildcard address.");
-            } else {
-                System.out.println("This is not a wildcard address.");
-            }
-
-            if (address.isLinkLocalAddress()) {
-                System.out.println("This is a link-local address.");
-            } else {
-                System.out.println("This is not a link-local address.");
-            }
-
-            if (address.isSiteLocalAddress()) {
-                System.out.println("This is a site-local address.");
-            } else {
-                System.out.println("This is not a site-local address.");
-            }
+            System.out.println(" loopback address" + address.isLoopbackAddress());
+            System.out.println("multicast address" + address.isMulticastAddress());
+            System.out.println("wildcard address" + address.isAnyLocalAddress());
+            System.out.println("LinkLocal address" + address.isLinkLocalAddress());
+            System.out.println("SiteLocal address" + address.isSiteLocalAddress());
 
         } catch (UnknownHostException e) {
-            System.err.println("Unable to resolve the IP address/hostname: " + e.getMessage());
+            System.err.println("error " + e.getMessage());
         }
     }
 }
