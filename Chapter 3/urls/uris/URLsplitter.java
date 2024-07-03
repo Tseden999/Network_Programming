@@ -27,7 +27,7 @@ public class URLsplitter {
             System.out.println("The ref is " + url.getRef());
             System.out.println("The query string is " + url.getQuery());
         } catch (MalformedURLException ex) {
-            System.err.println(" Given URL is not a URL I understand.");
+            System.err.println(" Given URL is not a URL.");
         }
         System.out.println();
 
