@@ -1,5 +1,6 @@
 
 import java.net.*;
+import java.io.BufferedReader;
 import java.io.*;
 
 public class WebLog {
@@ -7,7 +8,7 @@ public class WebLog {
         try (
                 FileInputStream file = new FileInputStream("Desktop/Network Programming/Comparison.java");
                 Reader in = new InputStreamReader(file);
-                BufferReader bin = new BufferReader(in);) {
+                BufferedReader bin = new BufferedReader(in);) {
 
             for (String entry = bin.readLine(); entry != null; entry = bin.readLine()) {
                 int index = entry.indexOf(' ');

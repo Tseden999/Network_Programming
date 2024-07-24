@@ -5,16 +5,16 @@ import java.util.Collections;
 
 public class NetworkInterfacesInfo {
     public static void main(String[] args) throws SocketException, UnknownHostException {
-        ArrayList<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterface());
+        ArrayList<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
         System.out.println("Getter method of NetworkInterface");
 
         for (NetworkInterface iface : interfaces) {
-            System.out.println("name is" + iface.getDisplayName());
+            System.out.println("Displayname is" + iface.getDisplayName());
             System.out.println("name is" + iface.getName());
-            System.out.println("name is" + iface.isUp());
-            System.out.println("name is" + iface.isVirtual());
-            System.out.println("name is" + iface.getMTU());
-            System.out.println("name is" + iface.isLoopback());
+            System.out.println("isUp" + iface.isUp());
+            System.out.println("isVirtual" + iface.isVirtual());
+            System.out.println("MTU is" + iface.getMTU());
+            System.out.println("Loopback is" + iface.isLoopback());
         }
     }
 }

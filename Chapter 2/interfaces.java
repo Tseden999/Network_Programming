@@ -1,11 +1,8 @@
 
 import java.net.*;
-import java.util.ArrayList;
-import java.util.ArrayList.*;
-import java.util.Collections;
-import java.util.Enumeration;
+import java.util.*;
 
-public class NetworkInterface {
+public class interfaces {
     public static void main(String[] args) throws SocketException,
             UnknownHostException {
 
