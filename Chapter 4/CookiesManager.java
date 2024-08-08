@@ -2,13 +2,9 @@
 import java.net.*;
 import java.util.List;
 
-/**
- *
- * @author Dell
- */
-public class CookieManager {
+public class CookiesManager {
     public static void main(String[] args) {
-        CookieManager cookie = new CookieManager();
+        CookiesManager cookie = new CookiesManager();
         CookieStore cookies = cookie.getCookieStore();
         HttpCookie cookieA = new HttpCookie("First", "1");
         HttpCookie cookieB = new HttpCookie("Second", "2");
