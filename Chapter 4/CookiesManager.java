@@ -1,42 +1,60 @@
-
 import java.net.*;
 import java.util.List;
 
 public class CookiesManager {
     public static void main(String[] args) {
-        CookiesManager cookie = new CookiesManager();
-        CookieStore cookies = cookie.getCookieStore();
+        // Create an instance of CookiesManager
+        CookiesManager cookieManager = new CookiesManager();
+
+        // Get the cookie store from the cookie manager
+        CookieStore cookies = cookieManager.getCookieStore();
+
+        // Create two cookies
         HttpCookie cookieA = new HttpCookie("First", "1");
         HttpCookie cookieB = new HttpCookie("Second", "2");
+
+        // Specify a URI
         URI uri = URI.create("https://eiccollege.edu.np/");
+
+        // Add cookies to the cookie store
         cookies.add(uri, cookieA);
         cookies.add(null, cookieB);
 
-        System.out.println("Cookie Successfully added.");
+        System.out.println("Cookie successfully added.");
 
-        List cookiesWithURI = cookies.get(uri);
-        System.out.println("Cookies with uri:" + cookiesWithURI + "\n");
+        // Retrieve cookies associated with the specific URI
+        List<HttpCookie> cookiesWithURI = cookies.get(uri);
+        System.out.println("Cookies with URI: " + cookiesWithURI + "\n");
 
-        List cookieList = cookies.getCookies();
-        System.out.println("Cookies:" + cookieList + "\n");
+        // Retrieve all cookies in the cookie store
+        List<HttpCookie> cookieList = cookies.getCookies();
+        System.out.println("All cookies: " + cookieList + "\n");
 
-        List uriList = cookies.getURIs();
-        System.out.println("URIs List:" + uriList);
+        // Retrieve all URIs in the cookie store
+        List<URI> uriList = cookies.getURIs();
+        System.out.println("URI List: " + uriList + "\n");
 
-        System.out.println("Removal of cookie:" + cookies.remove(uri, cookieA));
+        // Remove a specific cookie
+        boolean removed = cookies.remove(uri, cookieA);
+        System.out.println("Removal of cookie 'First': " + removed);
 
-        List rcookieList = cookies.getCookies();
-        System.out.println("Remaining Cookies:" + rcookieList + "\n");
+        // Check remaining cookies
+        List<HttpCookie> remainingCookies = cookies.getCookies();
+        System.out.println("Remaining cookies: " + remainingCookies + "\n");
 
-        System.out.println("Removal of cookie:" + cookies.removeAll());
+        // Remove all cookies
+        boolean allRemoved = cookies.removeAll();
+        System.out.println("All cookies removed: " + allRemoved);
 
-        List ecookieList = cookies.getCookies();
-        System.out.println("Empty Cookie Store:" + ecookieList + "\n");
+        // Verify the cookie store is empty
+        List<HttpCookie> emptyCookieList = cookies.getCookies();
+        System.out.println("Empty cookie store: " + emptyCookieList + "\n");
     }
 
+    // Method to get the cookie store using a CookieManager
     private CookieStore getCookieStore() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCookieStore'");
+        CookieManager cookieManager = new CookieManager();
+        CookieHandler.setDefault(cookieManager);
+        return cookieManager.getCookieStore();
     }
-
 }

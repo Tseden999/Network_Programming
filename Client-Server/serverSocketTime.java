@@ -9,7 +9,7 @@ import java.util.Date;
 public class serverSocketTime {
     public static void main(String[] args) {
         try {
-            ServerSocket ss = new ServerSocket(13);
+            ServerSocket ss = new ServerSocket(8000);
             Socket s = ss.accept();
             Thread task = new DaytimeThread(s);
             task.start();
